@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="92836f4d-e501-4125-801c-f5c376e299e1" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="test999Flow" doc:id="d06beb31-31a8-4f06-a3f5-711fb82ab94c" >
+		<http:listener doc:name="Listener" doc:id="a179196b-dc5f-466e-b184-51a4e3205aa1" config-ref="HTTP_Listener_config" path="/999"/>
+		<logger level="INFO" doc:name="Logger" doc:id="30e06b57-e993-4405-98c0-9bf99567e82c" message='#["hi hello"]'/>
+	</flow>
+</mule>
